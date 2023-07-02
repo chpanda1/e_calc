@@ -15,36 +15,36 @@
         <div class="calculator mt-5 rounded-3 p-2">
             <form action="">
                 <div class="d-flex justify-content-end mt-2 mb-2">
-                    <input type="text" name="display" class="text-end flex-fill shadow-none" style="font-size: 45px;">
+                    <span id="answer" style="font-size: 45px; color: white;">0</input> 
                 </div>
                 <div>
-                    <input type="button" value="AC" onclick="display.value = '' " class="text-success">
-                    <input type="button" value="DE" onclick="display.value = display.value.toString().slice(0,-1)" class="text-success">
-                    <input type="button" value="."  onclick="display.value += '.' " class="text-success">
-                    <input type="button" value="/"  onclick="display.value += '/' " class="text-success">
+                    <input type="button" id="AC" value="AC" onclick="clearAll()" class="text-success">
+                    <input type="button" value="DE" onclick="del()" class="text-success">
+                    <input type="button" value="."  onclick="numericButton('.')" class="text-success">
+                    <input type="button" value="÷" id="operator" onclick="operatorButton('/')" class="text-success">
                 </div>
                 <div>
-                    <input type="button" value="7" onclick="display.value += '7' ">
-                    <input type="button" value="8" onclick="display.value += '8' ">
-                    <input type="button" value="9" onclick="display.value += '9' ">
-                    <input type="button" value="*" onclick="display.value += '*' " class="text-success">
+                    <input type="button" value="7" onclick="numericButton('7')">
+                    <input type="button" value="8" onclick="numericButton('8')">
+                    <input type="button" value="9" onclick="numericButton('9')">
+                    <input type="button" value="*" id="operator" onclick="operatorButton('*')" class="text-success">
                 </div>
                 <div>
-                    <input type="button" value="4" onclick="display.value += '4' ">
-                    <input type="button" value="5" onclick="display.value += '5' ">
-                    <input type="button" value="6" onclick="display.value += '6' ">
-                    <input type="button" value="-" onclick="display.value += '-' " class="text-success">
+                    <input type="button" value="4" onclick="numericButton('4')">
+                    <input type="button" value="5" onclick="numericButton('5')">
+                    <input type="button" value="6" onclick="numericButton('6')">
+                    <input type="button" value="-" id="operator" onclick="operatorButton('-')" class="text-success">
                 </div>
                 <div>
-                    <input type="button" value="1" onclick="display.value += '1' ">
-                    <input type="button" value="2" onclick="display.value += '2' ">
-                    <input type="button" value="3" onclick="display.value += '3' ">
-                    <input type="button" value="+" onclick="display.value += '+' " class="text-success">
+                    <input type="button" value="1" onclick="numericButton('1')">
+                    <input type="button" value="2" onclick="numericButton('2')">
+                    <input type="button" value="3" onclick="numericButton('3')">
+                    <input type="button" value="+" id="operator" onclick="operatorButton('+')" class="text-success">
                 </div>
                 <div>
-                    <input type="button" value="00" onclick="display.value += '00' ">
-                    <input type="button" value="0" onclick="display.value += '0' ">
-                    <input type="button" value="=" style="width: 145px;" onclick="display.value = eval(display.value)" class="text-success">
+                    <input type="button" value="00" onclick="numericButton('00')">
+                    <input type="button" value="0" onclick="numericButton('0')">
+                    <input type="button" value="=" style="width: 145px;"  onclick="calculateQueue(queue)" id="equals" class="text-success">
                 </div>
             </form>
         </div>
